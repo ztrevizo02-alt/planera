@@ -892,11 +892,12 @@ html, body {
 }
 
 /* ════════════════════════════════════════════════════════════
-   DESKTOP RESPONSIVE LAYOUT (FIXED)
+   DESKTOP OPTIMIZED LAYOUT (FIXED)
    ════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
+  /* 1. Set the background behind the phone "window" */
   body {
-    background: #e0e0e0;
+    background: #d1d5db; /* A neutral gray frame color */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -904,25 +905,18 @@ html, body {
     margin: 0;
   }
 
-  /* This forces the app to look like a phone "card" on a monitor */
+  /* 2. Turn the .app container into a floating device window */
   .app {
-    width: 420px !important;    /* Force mobile width */
-    height: 85vh !important;    /* Force mobile height */
-    max-height: 800px;
-    border-radius: 40px;        /* Rounded corners for the "device" look */
-    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-    overflow: hidden;
-    border: 8px solid #fff;     /* Creates a phone frame effect */
+    width: 400px !important;      /* Fixed narrow width */
+    height: 800px !important;     /* Fixed mobile-like height */
+    max-height: 90vh;             /* Ensures it fits on smaller laptop screens */
+    border-radius: 40px;          /* Phone-like rounded corners */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); /* Deep shadow to make it pop */
+    overflow: hidden;             /* Keeps everything inside the "phone" */
+    border: 8px solid #1a1a2e;    /* Adds a "bezel" or frame */
     position: relative;
     display: flex;
-    flex-direction: column;     /* Keeps top/bottom alignment */
-  }
-
-  /* Ensure pages scroll correctly inside the new fixed-height container */
-  .pages {
-    flex: 1;
-    overflow-y: auto;
-    position: relative;
+    flex-direction: column;
   }
 }
   
