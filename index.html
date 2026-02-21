@@ -892,39 +892,37 @@ html, body {
 }
 
 /* ════════════════════════════════════════════════════════════
-   DESKTOP RESPONSIVE LAYOUT (HARDWARE ADJUSTMENT)
+   DESKTOP RESPONSIVE LAYOUT (FIXED)
    ════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
-  /* Frame the app window on large monitors */
   body {
     background: #e0e0e0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
   }
 
-  /* Limit the app size */
+  /* This forces the app to look like a phone "card" on a monitor */
   .app {
-    width: 420px;
-    height: 90vh;
-    max-height: 900px;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    width: 420px !important;    /* Force mobile width */
+    height: 85vh !important;    /* Force mobile height */
+    max-height: 800px;
+    border-radius: 40px;        /* Rounded corners for the "device" look */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
     overflow: hidden;
-    border: 8px solid #fff;
+    border: 8px solid #fff;     /* Creates a phone frame effect */
+    position: relative;
+    display: flex;
+    flex-direction: column;     /* Keeps top/bottom alignment */
   }
 
-  /* Ensure elements stay in place */
-  .topbar {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  .bnav {
-    position: sticky;
-    bottom: 0;
-    z-index: 10;
+  /* Ensure pages scroll correctly inside the new fixed-height container */
+  .pages {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
   }
 }
   
