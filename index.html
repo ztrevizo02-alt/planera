@@ -892,38 +892,33 @@ html, body {
 }
 
 /* ════════════════════════════════════════════════════════════
-   TRUE RESPONSIVE LAYOUT (DESKTOP MODE)
+   DESKTOP OPTIMIZED LAYOUT
    ════════════════════════════════════════════════════════════ */
 @media (min-width: 768px) {
-  /* 1. Reset the app container to fill the screen */
+  /* 1. Set a nice background color for the screen */
+  body {
+    background-color: #e5e7eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  /* 2. Make the app look like a professional window */
   .app {
-    width: 100vw !important;
-    height: 100vh !important;
-    display: flex !important;
-    flex-direction: column !important; /* Maintains the main structure */
+    width: 600px !important;    /* This is wider than a phone, perfect for desktop */
+    height: 85vh !important;    /* Takes up most of the screen height */
+    border-radius: 16px;        /* Rounded corners look modern */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
   }
 
-  /* 2. Lock the banner to the top */
-  .topbar {
-    order: -1; /* Forces it to the very top */
-    width: 100%;
-    height: 60px; /* Adjust height as needed */
-    flex-shrink: 0;
-  }
-
-  /* 3. Lock the nav bar to the bottom */
-  .bnav {
-    order: 1; /* Forces it to the very bottom */
-    width: 100%;
-    height: 70px; /* Adjust height as needed */
-    flex-shrink: 0;
-  }
-
-  /* 4. Let the main content grow to fill all remaining space */
-  .pages {
-    flex-grow: 1;
-    overflow-y: auto;
-    width: 100%;
+  /* 3. Increase font size for better readability */
+  html {
+    font-size: 18px;            /* Everything gets slightly larger */
   }
 }
   
