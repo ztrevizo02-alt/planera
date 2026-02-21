@@ -852,48 +852,6 @@ html, body {
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* Updated fix for desktop stretching - scales with monitor size */
-@media (min-width: 768px) {  /* For tablets/small desktops */
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;  /* Align to top for better flow */
-    background: var(--bg);
-    overflow: auto;
-    padding: 20px;  /* Adds space around the app on big screens */
-  }
-  .app {
-    max-width: 500px;  /* Medium size for small desktops */
-    width: 100%;  /* Fills available space up to max */
-    min-height: 100vh;  /* Fills full height dynamically */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    overflow: hidden;
-  }
-  .overlay.open {
-    align-items: center;
-  }
-  .sheet {
-    max-height: 90%;
-  }
-}
-
-@media (min-width: 1440px) {  /* For 1440p monitors */
-  .app {
-    max-width: 700px;  /* Wider for mid-size monitors */
-  }
-}
-
-@media (min-width: 1920px) {  /* For 1080p/27-inch or larger */
-  .app {
-    max-width: calc(45vw);  /* Scales to ~45% of screen width for balance */
-    max-width: min(2560px, 45vw);  /* Caps at 900px to avoid too wide */
-  }
-  body {
-    padding: 40px;  /* More space on huge screens */
-  }
-}
-  
 </style>
 </head>
 
