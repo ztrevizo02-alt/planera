@@ -853,25 +853,33 @@ html, body {
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
 /* ════════════════════════════════════════════════════════════
-   DESKTOP/WEB CONSTRAINTS
-   Limits width on large screens to keep a mobile-like aspect ratio
+   RESPONSIVE DESKTOP CONSTRAINTS
+   Keeps the app centered and mobile-proportioned on large screens
    ════════════════════════════════════════════════════════════ */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
+  /* Give the body a subtle background to frame the app */
   body {
-    background: #e0e0e0; /* Optional: adds a different color behind the app for contrast */
+    background: #d1d1d1;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
+  /* Constrain the main app container */
   .app {
     width: 100%;
-    max-width: 450px; /* Adjust this to your preferred mobile width */
-    height: 90vh;    /* Slightly less than full height looks better on desktop */
-    border-radius: 24px;
+    max-width: 420px; /* Adjust this value to your preferred "phone" width */
+    height: 90vh;
+    max-height: 850px; /* Optional: prevents it from being too tall on huge monitors */
+    border-radius: 32px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    border: 1px solid var(--border);
+    border: 8px solid #fff; /* Creates a "phone frame" look */
+  }
+
+  /* Make sure overlays (pop-ups) fill the app container, not the whole screen */
+  .overlay {
+    position: absolute; /* Ensures it stays within .app */
   }
 }
   
