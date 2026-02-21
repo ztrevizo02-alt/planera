@@ -852,6 +852,29 @@ html, body {
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* ════════════════════════════════════════════════════════════
+   DESKTOP/WEB CONSTRAINTS
+   Limits width on large screens to keep a mobile-like aspect ratio
+   ════════════════════════════════════════════════════════════ */
+@media (min-width: 600px) {
+  body {
+    background: #e0e0e0; /* Optional: adds a different color behind the app for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app {
+    width: 100%;
+    max-width: 450px; /* Adjust this to your preferred mobile width */
+    height: 90vh;    /* Slightly less than full height looks better on desktop */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid var(--border);
+  }
+}
+  
 </style>
 </head>
 
